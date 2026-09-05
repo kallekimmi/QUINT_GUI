@@ -1,0 +1,913 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Phoenix Contact PC WORX 6 &#8212; Automation Solutions for Uninterupptible Power Supplies 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="QUINT4 CAP/24DC/20/16KJ/PN" href="../_PN_Q4_DC_CAP/_PN_Q4_DC_CAP.html" />
+    <link rel="prev" title="Process Data Description" href="_PN_Q4_DC_UPS_ProcessData.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../_PN_Q4_DC_CAP/_PN_Q4_DC_CAP.html" title="QUINT4 CAP/24DC/20/16KJ/PN"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="_PN_Q4_DC_UPS_ProcessData.html" title="Process Data Description"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../PROFINET.html" >PROFINET</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_PN_Q4_DC_UPS.html" accesskey="U">QUINT4 DC UPS 24DC/24DC/..A/PN</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Phoenix Contact PC WORX 6</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="phoenix-contact-pc-worx-6">
+<span id="pndcups-pcw6"></span><h1>Phoenix Contact PC WORX 6</h1>
+<section id="import-fdcml">
+<h2>Import FDCML</h2>
+<p>If the device catalog is not displayed, activate it via the “View” drop-down menu. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Show_Device_Catalog.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Show_Device_Catalog.png" style="width: 342.0px; height: 658.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p>Right click in Device Catalog and select “Import Catalog”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Import_Catalog.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Import_Catalog.png" style="width: 449.0px; height: 411.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p>Navigate to the downloaded FDCML file. If it does not appear in the pop-up window,
+change the file type to zbcc. Import the FDCML catalog. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_UPS_Select_ZBCC.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_UPS_Select_ZBCC.png" style="width: 490.7px; height: 300.29999999999995px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p>After the import has been completed successfully, it will be displayed as “POWER” folder under “Phoenix Contact”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_UPS_FDCML_Installed.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_UPS_FDCML_Installed.png" style="width: 442.0px; height: 236.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+</section>
+<section id="hardware-configuration">
+<h2>Hardware Configuration</h2>
+<p>Right click on “PROFINET” and select “Read PROFINET”.
+The PLC scans the bus system and adds new devices
+automatically to the hardware configuration. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_ReadPN.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_ReadPN.png" style="width: 467.0px; height: 465.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p>The second way to configure the hardware is to add the used device from the hardware catalog.
+For this select “PROFINET” and choose the UPS from the device catalog. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_IoCatalog.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_IoCatalog.png" style="width: 433.0px; height: 233.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p>After successfully adding the UPS to the hardware configuration it should look like the screenshot below. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_PnStructure1.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_PnStructure1.png" style="width: 977.0px; height: 532.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+</section>
+<section id="software-configuration">
+<h2>Software Configuration</h2>
+</section>
+<section id="function-block-ps-q4-dcupspn-cyclic">
+<h2>Function Block PS_Q4_DcUpsPN_Cyclic</h2>
+<p>This function block decodes cyclically transmitted data of the UPS and provides them to the user in a readable form. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_PS_DcUpsPn_Cyclic.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_PS_DcUpsPn_Cyclic.png" style="width: 257.0px; height: 306.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p><strong>Inputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-inputs-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActivate</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: activates the Function Block</p></td>
+</tr>
+<tr class="row-odd"><td><p>arrInputPD</p></td>
+<td><p>ARRAY [0..57] OF BYTE</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>tTimeOut</p></td>
+<td><p>TIME</p></td>
+<td><p>Time that must elapse before a communication timeout is reported</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Outputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-outputs">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: function block is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xError</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Malfunction of the function block detected</p></td>
+</tr>
+<tr class="row-even"><td><p>wDiagCode</p></td>
+<td><p>WORD</p></td>
+<td><p>Diagnostic Code. Refer to Diagnostic table</p></td>
+</tr>
+<tr class="row-odd"><td><p>dwAddDiagCode</p></td>
+<td><p>DWORD</p></td>
+<td><p>Additional Information on Diagnostic Code. Refer to Diagnostic table</p></td>
+</tr>
+<tr class="row-even"><td><p>wOutputVoltage</p></td>
+<td><p>WORD</p></td>
+<td><p>Output Voltage of the UPS in mV.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wOutputCurrent</p></td>
+<td><p>WORD</p></td>
+<td><p>Output Current of the UPS in mA.</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Mains Failure, UPS is in Battery Mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>udtDataStruct</p></td>
+<td><p>STRUCT</p></td>
+<td><p>Structure of UPS specific data. Refer to Appendix tables.</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Diagnostic</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-diagnostic-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>wDiagcode</p></th>
+<th class="head"><p>dwAddDiagCode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>16#0000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The function block is not active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#8000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The function block is active, no errors detected.</p></td>
+</tr>
+<tr class="row-even"><td><p>16#C415</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>Timeout while receiving data</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Startup instructions</strong> <br/>
+View: IEC Programming workspace. <br/>
+Create an instance of function block and add a global variable connected with arrInputPD. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Cyclic.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Cyclic.png" style="width: 432.0px; height: 324.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p><strong>View</strong>: Bus configuration workspace. <br/>
+Select slot 1 of UPS and connect ~IN via drag &amp; drop to global variable of the program. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Cyclic_PD.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Cyclic_PD.png" style="width: 680.0px; height: 235.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+</section>
+<section id="function-block-ps-q4-dcupspn-param">
+<h2>Function block PS_Q4_DcUpsPN_Param</h2>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_PS_DcUpsPn_Param.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_PS_DcUpsPn_Param.png" style="width: 313.0px; height: 431.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p><strong>Inputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-inputs-param">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActivate</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: activates the Function Block</p></td>
+</tr>
+<tr class="row-odd"><td><p>dwNodeID</p></td>
+<td><p>DWORD</p></td>
+<td><p>NodeID of UPS slot 1</p></td>
+</tr>
+<tr class="row-even"><td><p>wIndex</p></td>
+<td><p>WORD</p></td>
+<td><p>Address of parameter for reading/writing</p></td>
+</tr>
+<tr class="row-odd"><td><p>xAcknowledge</p></td>
+<td><p>BOOL</p></td>
+<td><p>Rising edge: Error messages are deleted. The function block is not re-initialized.</p></td>
+</tr>
+<tr class="row-even"><td><p>xReceive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Rising edge: Receive data from parameter wIndex with length of iReceiveLength</p></td>
+</tr>
+<tr class="row-odd"><td><p>iReceiveLength</p></td>
+<td><p>INT</p></td>
+<td><p>Number of receiving bytes</p></td>
+</tr>
+<tr class="row-even"><td><p>xSend</p></td>
+<td><p>BOOL</p></td>
+<td><p>Rising edge: Send data to parameter wIndex with length of iSendLength</p></td>
+</tr>
+<tr class="row-odd"><td><p>iSendLength</p></td>
+<td><p>INT</p></td>
+<td><p>Number of sending bytes</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-outputs-param">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Function block is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xError</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: An error has occurred. For details refer to wDiagCode and wAddDiagCode.</p></td>
+</tr>
+<tr class="row-even"><td><p>wDiagCode</p></td>
+<td><p>WORD</p></td>
+<td><p>Diagnostic code. Refer to diagnostics table.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dwAddDiagCode</p></td>
+<td><p>DWORD</p></td>
+<td><p>Additional diagnostic code. Refer to diagnostics table.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="tab-inout-param">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xBusy</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: The block is busy with the service execution.</p></td>
+</tr>
+<tr class="row-odd"><td><p>arrReceiveBuffer</p></td>
+<td><p>PS_ARR_B_1_512</p></td>
+<td><p>Buffer for received data. BYTE array with the limits 1 to 512.</p></td>
+</tr>
+<tr class="row-even"><td><p>arrSendBuffer</p></td>
+<td><p>PS_ARR_B_1_512</p></td>
+<td><p>Buffer for sending data. BYTE array with the limits 1 to 512.</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Diagnostic</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-diagnostic-param">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>wDiagcode</p></th>
+<th class="head"><p>dwAddDiagCode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>16#0000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The function block is inactive.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#8000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The function block is active.</p></td>
+</tr>
+<tr class="row-even"><td><p>16#C110</p></td>
+<td></td>
+<td><p>Wrong parameter</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>16#0000_0002</p></td>
+<td><p>Invalid parameter at dwNodeID (dwNodeID has to be &gt; 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>16#0000_0003</p></td>
+<td><p>Invalid parameter at wIndex (wIndex between 16#4FFF and 16#5FFF is not allowed)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>16#0000_0006</p></td>
+<td><p>Invalid parameter at iReceiveLength (Range 1 to 512 allowed only)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>16#0000_0008</p></td>
+<td><p>Invalid parameter at iSendLength (Range 1 to 512 allowed only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#C416</p></td>
+<td></td>
+<td><p>Internal timeout</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>16#0000_0010</p></td>
+<td><p>Wrong parameter. NodeID = 0</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>16#0000_00D2</p></td>
+<td><p>Timeout while sending data</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>16#0000_006E</p></td>
+<td><p>Timeout while receiving data</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#C350</p></td>
+<td><p>16#xxxx_xxxx</p></td>
+<td><p>Error reading process. Refer to chapter 9.1 Appendix - Firmware Error Codes</p></td>
+</tr>
+<tr class="row-even"><td><p>16#C351</p></td>
+<td><p>16#xxxx_xxxx</p></td>
+<td><p>Error sending process. Refer to chapter 9.1 Appendix - Firmware Error Codes</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Startup instructions</strong></p>
+<p><strong>View</strong>: IEC Programming workspace.
+Create an instance of function block and add variables to the inputs/outputs/inouts. For read/write parameters set
+dwNodeID to NodeID value of UPS slot 1 or slot 2..6 for battery parameter. In this example the NodeID is 188dec =
+BChex.</p>
+<p>To read parameters from the UPS choose variable from the parameter list and set wIndex to the related index. Set
+iReceiveLength to the related size of the variable, to read blockwise enter the required size in BYTE. A rising
+trigger at xReceive starts the reading process, xBusy is TRUE until the reading process is done. arrReceiveBuffer
+contains the received data from the UPS. To send parameters to the UPS copy the new values into the
+arrSendBuffer. Define wIndex and iSendLength like described for reading process. A rising trigger at xSend starts
+the writing process, xBusy is TRUE until the writing process is done.
+<br/></p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Param.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Param.png" style="width: 533.0px; height: 435.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p><strong>View</strong>: Bus Configuration workspace.
+<br/>
+<br/></p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Param_NodeID.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Param_NodeID.png" style="width: 1045.0px; height: 304.0px;" /></a>
+</section>
+<section id="function-block-ps-q4-dcupspn-diag">
+<h2>Function Block PS_Q4_DcUpsPN_Diag</h2>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_PS_DcUpsPn_Diag.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_PS_DcUpsPn_Diag.png" style="width: 261.0px; height: 301.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+<p><strong>Inputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-inputs-diag">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActivate</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: activates the Function Block</p></td>
+</tr>
+<tr class="row-odd"><td><p>xQuit</p></td>
+<td><p>BOOL</p></td>
+<td><p>Rising edge: Warning messages are confirmed. The function block is not re-initialized.</p></td>
+</tr>
+<tr class="row-even"><td><p>xReset</p></td>
+<td><p>BOOL</p></td>
+<td><p>Rising edge: All error messages are deleted. The function block is re-initialized.</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Outputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-outputs-diag">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Function block is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xError</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: An error has occurred. For details refer to wDiagCode and wAddDiagCode.</p></td>
+</tr>
+<tr class="row-even"><td><p>wDiagCode</p></td>
+<td><p>WORD</p></td>
+<td><p>Diagnostic code. Refer to diagnostics table.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dwAddDiagCode</p></td>
+<td><p>DWORD</p></td>
+<td><p>Additional diagnostic code. Refer to diagnostics table.</p></td>
+</tr>
+<tr class="row-even"><td><p>arrAlarmInfo</p></td>
+<td><p>PS_ARR_ALARMTEXT_UDT_0_255</p></td>
+<td><p>Alarm Messages. UDT array with the limits 0 to 255</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Diagnostic</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-diagnostic-diag">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>wDiagcode</p></th>
+<th class="head"><p>dwAddDiagCode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>16#0000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>TRUE: The function block is not active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#8000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The function block is active.</p></td>
+</tr>
+<tr class="row-even"><td><p>16#C520</p></td>
+<td><p>16#xxxx_xxxx</p></td>
+<td><p>Refer to Appendix</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Startup instructions</strong> <br/>
+<strong>View</strong>: IEC Programming workspace. <br/>
+Create an instance of function block and activate the function block by setting the connected variable to TRUE. The
+function block collects diagnosis and process alarms from all QUINT4 DC UPS devices in the network and provides
+the states as an alarm flag (xDiagnosisAlarm, xProcessAlarm) and as readable text (arrAlarmInfo).
+<br/></p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_Diag.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_Diag.png" style="width: 444.0px; height: 350.0px;" /></a>
+<p><br/></p>
+<a class="reference internal image-reference" href="../../_images/PN_PCW6_detail_diag.png"><img alt="alternate text" class="align-left" src="../../_images/PN_PCW6_detail_diag.png" style="width: 932.0px; height: 337.0px;" /></a>
+<p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> |</p>
+</section>
+<section id="appendix">
+<h2>Appendix</h2>
+<p><strong>DATA TYPES</strong></p>
+<p><strong>PS_srSTATUS_FUNCTIONS</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xStartUpActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is starting</p></td>
+</tr>
+<tr class="row-odd"><td><p>xMainPowerModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in mains mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatteryModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in battery mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>xOutput</p></td>
+<td><p>BOOL</p></td>
+<td><p>Output of device is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBoost</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in boost mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>xChargerOn</p></td>
+<td><p>BOOL</p></td>
+<td><p>Charger of device is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatteryComActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Communcation to batteries is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xStatusBatCom</p></td>
+<td><p>BOOL</p></td>
+<td><p>Status com to batteries: 0=adressing, 1=normal communication</p></td>
+</tr>
+<tr class="row-even"><td><p>xAutonomicStart</p></td>
+<td><p>BOOL</p></td>
+<td><p>Autonomic start input is open/closed</p></td>
+</tr>
+<tr class="row-odd"><td><p>xRemoteConnected</p></td>
+<td><p>BOOL</p></td>
+<td><p>Remote DI connected/disconnected</p></td>
+</tr>
+<tr class="row-even"><td><p>xRemoteEnabled</p></td>
+<td><p>BOOL</p></td>
+<td><p>Remote is enabled/disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>xPSinBoostMode</p></td>
+<td><p>BOOL</p></td>
+<td><p>Power supply is in boost mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xPhoenixAddCharger</p></td>
+<td><p>BOOL</p></td>
+<td><p>Phoenix Contact additional charger is connected</p></td>
+</tr>
+<tr class="row-odd"><td><p>xServiceModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in service mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatDelay1Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 1 is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBatDelay2Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 2 is active</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatDelay3Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 3 is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xExternalCharger</p></td>
+<td><p>BOOL</p></td>
+<td><p>External charger active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xBufferReady</p></td>
+<td><p>BOOL</p></td>
+<td><p>Connected energy storage is ready to buffer</p></td>
+</tr>
+<tr class="row-odd"><td><p>xButtonUse</p></td>
+<td><p>BOOL</p></td>
+<td><p>Service button enabled/disabled</p></td>
+</tr>
+<tr class="row-even"><td><p>xSelectorSwitchUse</p></td>
+<td><p>BOOL</p></td>
+<td><p>Selector switch enabled/disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>xSystemTest</p></td>
+<td><p>BOOL</p></td>
+<td><p>System test active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatCapTest</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery capacity test active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBatteryPresent</p></td>
+<td><p>BOOL</p></td>
+<td><p>Energy storage connected/disconnected</p></td>
+</tr>
+<tr class="row-even"><td><p>xSOC_Initialized</p></td>
+<td><p>BOOL</p></td>
+<td><p>State of charge initialized</p></td>
+</tr>
+<tr class="row-odd"><td><p>xTriggerLogData</p></td>
+<td><p>BOOL</p></td>
+<td><p>New log data available</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_srSTATUS_INTERFACE</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xStartUpActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is starting</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDO1</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO1 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xDO2</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO2 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDO3</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO3 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xDI1</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI1 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDI2</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI2 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xDI3</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI3 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xModeSelector1</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 1</p></td>
+</tr>
+<tr class="row-even"><td><p>xModeSelector2</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>xModeSelector3</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 3</p></td>
+</tr>
+<tr class="row-even"><td><p>xModeSelector4</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>xSwitchPressed</p></td>
+<td><p>BOOL</p></td>
+<td><p>Service button pressed/NOT pressed</p></td>
+</tr>
+<tr class="row-even"><td><p>xGreenLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green LED is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xYellowLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Yellow LED is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xRedLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Red LED is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphRed</p></td>
+<td><p>BOOL</p></td>
+<td><p>Red bargraph LED is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphGreen1</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 1 is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphGreen2</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 2 is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphGreen3</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 3 is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphGreen4</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 4 is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphGreen5</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 5 is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xSFB_Input</p></td>
+<td><p>BOOL</p></td>
+<td><p>SFB input is active/inactive</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtDataStruct</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 25%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>srStatus_Functions</p></td>
+<td><p>PS_srSTATUS_FUNCTIONS</p></td>
+<td><p>Collection of status signals</p></td>
+</tr>
+<tr class="row-odd"><td><p>srStatus_Interface</p></td>
+<td><p>PS_srSTATUS_INTERFACE</p></td>
+<td><p>Collection of interface signals</p></td>
+</tr>
+<tr class="row-even"><td><p>wInputVoltage</p></td>
+<td><p>WORD</p></td>
+<td><p>Input voltage in mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>wInputCurrent</p></td>
+<td><p>WORD</p></td>
+<td><p>Input current in mA</p></td>
+</tr>
+<tr class="row-even"><td><p>wOutputCurrent</p></td>
+<td><p>WORD</p></td>
+<td><p>Output current in mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>wBatteryVoltage</p></td>
+<td><p>WORD</p></td>
+<td><p>Battery voltage in mV</p></td>
+</tr>
+<tr class="row-even"><td><p>wBatteryChargeCurrent</p></td>
+<td><p>WORD</p></td>
+<td><p>Battery charge current in mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>wBatteryTemperature</p></td>
+<td><p>WORD</p></td>
+<td><p>Battery temperature in K</p></td>
+</tr>
+<tr class="row-even"><td><p>wDeviceTemperature</p></td>
+<td><p>WORD</p></td>
+<td><p>Device temperature in K</p></td>
+</tr>
+<tr class="row-odd"><td><p>dwSocRemainingTime</p></td>
+<td><p>DWORD</p></td>
+<td><p>Remaining time in seconds</p></td>
+</tr>
+<tr class="row-even"><td><p>wSocRemainingTimePC_Shutdown</p></td>
+<td><p>WORD</p></td>
+<td><p>Remaining time PC shutdown [s]</p></td>
+</tr>
+<tr class="row-odd"><td><p>wBatRemainingLifetime</p></td>
+<td><p>WORD</p></td>
+<td><p>Remaining lifetime in days</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_ARR_ALARMTEXT_UDT_0_255</strong>  : ARRAY[0..255] OF PS_ALARMTEXT;(<em>Buffer of active alarm messages</em>)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xStartUpActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is starting</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_ALARMTEXT</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 7%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>strStationName</p></td>
+<td><p>STRING</p></td>
+<td><p>Station name of the reporting device</p></td>
+</tr>
+<tr class="row-odd"><td><p>strDiagInfo</p></td>
+<td><p>STRING</p></td>
+<td><p>Diagnosis message of reporting device</p></td>
+</tr>
+<tr class="row-even"><td><p>strAddDiagInfo</p></td>
+<td><p>STRING</p></td>
+<td><p>Additional information to the diagnosis message</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/> |</p>
+<p><a class="reference internal" href="#pndcups-pcw6">back to top</a></p>
+<img alt="../../_images/signal_chain.png" class="no-scaled-link" src="../../_images/signal_chain.png" style="width: 794.0px; height: 45.0px;" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../Automation%20Solutions%20Manual.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../PROFINET.html">PROFINET</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="_PN_Q4_DC_UPS.html">QUINT4 DC UPS 24DC/24DC/..A/PN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_PN_Q4_DC_CAP/_PN_Q4_DC_CAP.html">QUINT4 CAP/24DC/20/16KJ/PN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_Ethernet_IP/EthernetIP.html">Ethernet/IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_EtherCat/EtherCAT.html">EtherCAT</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../_PN_Q4_DC_CAP/_PN_Q4_DC_CAP.html" title="QUINT4 CAP/24DC/20/16KJ/PN"
+             >next</a></li>
+        <li class="right" >
+          <a href="_PN_Q4_DC_UPS_ProcessData.html" title="Process Data Description"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../PROFINET.html" >PROFINET</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_PN_Q4_DC_UPS.html" >QUINT4 DC UPS 24DC/24DC/..A/PN</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Phoenix Contact PC WORX 6</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Phoenix Contact Power Supplies GmbH.
+    </div>
+  </body>
+</html>

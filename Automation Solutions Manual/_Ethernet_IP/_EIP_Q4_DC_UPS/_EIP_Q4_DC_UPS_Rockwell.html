@@ -1,0 +1,1203 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Rockwell Automation Studio 5000 &#8212; Automation Solutions for Uninterupptible Power Supplies 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="QUINT4 CAP/24DC/20/16KJ/EIP" href="../_EIP_Q4_DC_CAP/_EIP_Q4_DC_CAP.html" />
+    <link rel="prev" title="Process Data Description" href="_EIP_Q4_DC_UPS_ProcessData.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../_EIP_Q4_DC_CAP/_EIP_Q4_DC_CAP.html" title="QUINT4 CAP/24DC/20/16KJ/EIP"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="_EIP_Q4_DC_UPS_ProcessData.html" title="Process Data Description"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../EthernetIP.html" >Ethernet/IP</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_EIP_Q4_DC_UPS.html" accesskey="U">QUINT4 DC UPS 24DC/24DC/..A/EIP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Rockwell Automation Studio 5000</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="rockwell-automation-studio-5000">
+<span id="top"></span><h1>Rockwell Automation Studio 5000</h1>
+<section id="import-eds-file">
+<h2>Import EDS File</h2>
+<p>Import the EDS Files with “EDS Hardware Installation Tool”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_EDS_Manager.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_EDS_Manager.png" style="width: 509.0px; height: 366.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Navigate through the Installation Wizard and Register an EDS File(s). <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_Register_EDS.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_Register_EDS.png" style="width: 567.0px; height: 391.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Select “Register a directory of EDS Files” and browse to the folder which contains the EDS Files.
+Follow the next steps for installing the files. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_EDS_Directory.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_EDS_Directory.png" style="width: 612.0px; height: 459.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+</section>
+<section id="hardware-configuration">
+<h2>Hardware Configuration</h2>
+<p>There are two ways to configure the hardware. First way is to discover the modules. For this connect to the UPS
+and right click on the Ethernet Connection of the PLC. Choose “Discover Modules” and scan the network for the UPS. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Discover_Modules.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Discover_Modules.png" style="width: 354.0px; height: 786.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Select the previously set IP address and check if the shown Ordernumber matches to the UPS. Click on “Create”
+and add the UPS to the Hardware configuration. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Discovered_Module.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Discovered_Module.png" style="width: 741.0px; height: 137.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Name the UPS “QUINT4_UPS_EIP”, configure the previously set address to the UPS. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwel_DC_Create_Discovered.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwel_DC_Create_Discovered.png" style="width: 692.0px; height: 518.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Second way to configure the hardware is to add the UPS with the module catalog. Right click on Ethernet
+Connection and select “New Module”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_New_Module.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_New_Module.png" style="width: 322.0px; height: 227.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Search for the correct QUINT4 UPS and click on “Create”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_New_Create.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_New_Create.png" style="width: 770.0px; height: 526.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Name the UPS ” QUINT4_UPS_EIP” and configure the previously set IP address. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_New_Name_IP.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_New_Name_IP.png" style="width: 698.0px; height: 523.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+</section>
+<section id="software-configuration">
+<h2>Software Configuration</h2>
+</section>
+<section id="addon-instruction-ps-q4-dcupseip-implicit">
+<h2>AddOn Instruction PS_Q4_DcUpsEIP_Implicit</h2>
+<p>This AddOn Instruction decodes cyclically transmitted data of the UPS and provides them to the user in a readable form. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_PS_Q4_DcUpsEIP_Implicit.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_PS_Q4_DcUpsEIP_Implicit.png" style="width: 362.0px; height: 243.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p><strong>Inputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-inputs-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EnableHMI</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Enables communication with faceplates</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Outputs</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-outputs-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: AOI is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>Error</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: An error has occurred. For details refer to DiagCode and AddDiagCode.</p></td>
+</tr>
+<tr class="row-even"><td><p>DiagCode</p></td>
+<td><p>DINT</p></td>
+<td><p>Diagnostic Code. Refer to Diagnostic table</p></td>
+</tr>
+<tr class="row-odd"><td><p>AddDiagCode</p></td>
+<td><p>INT</p></td>
+<td><p>Additional Information on Diagnostic Code. Refer to Diagnostic table</p></td>
+</tr>
+<tr class="row-even"><td><p>BatModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: Mains Failure, UPS is in Battery Mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alarm</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: An alarm has occured</p></td>
+</tr>
+<tr class="row-even"><td><p>Warning</p></td>
+<td><p>BOOL</p></td>
+<td><p>TRUE: A warning has occured</p></td>
+</tr>
+<tr class="row-odd"><td><p>OutputVoltage</p></td>
+<td><p>INT</p></td>
+<td><p>Output voltage of UPS in mV</p></td>
+</tr>
+<tr class="row-even"><td><p>OutputCurrent</p></td>
+<td><p>INT</p></td>
+<td><p>Output current of UPS in mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UpsAlarms</p></td>
+<td><p>DINT</p></td>
+<td><p>Alarm bits of UPS. Refer to Alarm table.</p></td>
+</tr>
+<tr class="row-even"><td><p>UpsWarnings</p></td>
+<td><p>DINT</p></td>
+<td><p>Warning bits of UPS. Refer to Warning table.</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>InOuts</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-inouts-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>InputDataUPS</p></td>
+<td><p>SINT[58]</p></td>
+<td><p>Process data from UPS. BYTE array with the limits 0 to 57</p></td>
+</tr>
+<tr class="row-odd"><td><p>DataStruct</p></td>
+<td><p>PS_udtDataStruct</p></td>
+<td><p>Structure of UPS specific data. Refer to Appendix</p></td>
+</tr>
+<tr class="row-even"><td><p>Diagnosis</p></td>
+<td><p>STRING[32]</p></td>
+<td><p>Alarm messages from the UPS. STRING array with the limits 0 to 31</p></td>
+</tr>
+<tr class="row-odd"><td><p>MSG_CTRL_C</p></td>
+<td><p>PS_udtMSGCtrl</p></td>
+<td><p>Structure of communication parameters</p></td>
+</tr>
+<tr class="row-even"><td><p>MSG_CTRL_R</p></td>
+<td><p>MESSAGE</p></td>
+<td><p>MSG AOI for reading parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>MSG_CTRL_W</p></td>
+<td><p>MESSAGE</p></td>
+<td><p>MSG AOI for writing parameters</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Diagnostic</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-diagnostic-cyclic">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Diagcode</p></th>
+<th class="head"><p>AddDiagCode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>16#0000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The addon instruction is not active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16#8000</p></td>
+<td><p>16#0000_0000</p></td>
+<td><p>The addon instruction is active, no errors detected.</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Alarms</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-alarms-cyclic">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0-1</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Overload cutoff</p></td>
+</tr>
+<tr class="row-even"><td><p>3-4</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Internal fault</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Battery technologies different</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Battery capacities different</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Battery capacity test negative</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Battery capacity too high</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>Battery capacity too low</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>Temperature drop between batteries too high</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>Battery quality check negative</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>Battery end of lifetime reached</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>No battery detected</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>Replace Battery</p></td>
+</tr>
+<tr class="row-odd"><td><p>17-31</p></td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Warnings</strong> <br/></p>
+<table class="colwidths-given docutils align-default" id="tab-warnings-cyclic">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Any user counter exceeded</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>User threshold battery voltage exceeded</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>User threshold SOC [%] low exceeded</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>User threshold SOC [min] low exceeded</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Battery mode active</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Capacity test active</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Shutdown Event triggered</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Service Mode active</p></td>
+</tr>
+<tr class="row-even"><td><p>8-31</p></td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+<strong>Startup instructions</strong> <br/></p>
+<p>Open the “MainRoutine” or a Subroutine. Right click on the routine and select “Import Rungs”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Import_Rung.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Import_Rung.png" style="width: 600.0px; height: 548.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Navigate to the downloaded AddOn Instruction and import the “.L5X file. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Rung_L5X.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Rung_L5X.png" style="width: 767.0px; height: 438.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>After successfully imported the rung the AOI should appear like shown below. The preconfigured “InputDataUPS” is
+set to the Name “QUINT4_DC_UPS”. It should match to the Name of the UPS which was set in the Hardware configuration. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Rung_Successful.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Rung_Successful.png" style="width: 738.0px; height: 586.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+<p>Compile the project and download it on the PLC. After running the system the current values of the UPS
+are shown in the output structure “DataStruct”. <br/> |</p>
+<a class="reference internal image-reference" href="../../_images/Rockwell_DC_Rung_Online.png"><img alt="alternate text" class="align-left" src="../../_images/Rockwell_DC_Rung_Online.png" style="width: 630.0px; height: 688.0px;" /></a>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> |</p>
+</section>
+<section id="appendix">
+<h2>Appendix</h2>
+<p><strong>DATA TYPES</strong></p>
+<p><strong>PS_srSTATUS_FUNCTIONS</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xStartUpActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is starting</p></td>
+</tr>
+<tr class="row-odd"><td><p>xMainPowerModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in mains mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatteryModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in buffer mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>xOutput</p></td>
+<td><p>BOOL</p></td>
+<td><p>Output of device is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBoost</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in boost mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBatteryComActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Communcation to batteries is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xStatusBatCom</p></td>
+<td><p>BOOL</p></td>
+<td><p>Status com to batteries: 0=adressing, 1=normal communication</p></td>
+</tr>
+<tr class="row-odd"><td><p>xAutonomicStart</p></td>
+<td><p>BOOL</p></td>
+<td><p>Autonomic start input is open/closed</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatteryComActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Communcation to batteries is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xRemoteConnected</p></td>
+<td><p>BOOL</p></td>
+<td><p>Remote DI connected/disconnected</p></td>
+</tr>
+<tr class="row-even"><td><p>xRemoteEnabled</p></td>
+<td><p>BOOL</p></td>
+<td><p>Remote is enabled/disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>xPSinBoostMode</p></td>
+<td><p>BOOL</p></td>
+<td><p>Power supply is in boost mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xPhoenixAddCharger</p></td>
+<td><p>BOOL</p></td>
+<td><p>Phoenix Contact additional charger is connected</p></td>
+</tr>
+<tr class="row-odd"><td><p>xServiceModeActive</p></td>
+<td><p>BOOL</p></td>
+<td><p>Device is in service mode</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatDelay1Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 1 is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBatDelay2Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 2 is active</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatDelay3Active</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery mode delay time 3 is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>xExternalCharger</p></td>
+<td><p>BOOL</p></td>
+<td><p>External charger active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xBufferReady</p></td>
+<td><p>BOOL</p></td>
+<td><p>Connected energy storage is ready to buffer</p></td>
+</tr>
+<tr class="row-odd"><td><p>xButtonUse</p></td>
+<td><p>BOOL</p></td>
+<td><p>Service button enabled/disabled</p></td>
+</tr>
+<tr class="row-even"><td><p>xSelectorSwitchUse</p></td>
+<td><p>BOOL</p></td>
+<td><p>Selector switch enabled/disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>xSystemTest</p></td>
+<td><p>BOOL</p></td>
+<td><p>System test active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xBatCapTest</p></td>
+<td><p>BOOL</p></td>
+<td><p>Battery capacity test active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBatteryPresent</p></td>
+<td><p>BOOL</p></td>
+<td><p>Energy storage connected/disconnected</p></td>
+</tr>
+<tr class="row-even"><td><p>xSOC_Initialized</p></td>
+<td><p>BOOL</p></td>
+<td><p>State of charge initialized</p></td>
+</tr>
+<tr class="row-odd"><td><p>xTriggerLogData</p></td>
+<td><p>BOOL</p></td>
+<td><p>New log data available</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_srSTATUS_INTERFACE</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xDO1</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO1 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDO2</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO2 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xDO3</p></td>
+<td><p>BOOL</p></td>
+<td><p>DO3 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDI1</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI1 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xDI2</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI2 is active/inactive</p></td>
+</tr>
+<tr class="row-odd"><td><p>xDI3</p></td>
+<td><p>BOOL</p></td>
+<td><p>DI3 is active/inactive</p></td>
+</tr>
+<tr class="row-even"><td><p>xModeSelector1</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>xModeSelector2</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 2</p></td>
+</tr>
+<tr class="row-even"><td><p>xModeSelector3</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>xModeSelector4</p></td>
+<td><p>BOOL</p></td>
+<td><p>mode selector switch 4</p></td>
+</tr>
+<tr class="row-even"><td><p>xSwitchPressed</p></td>
+<td><p>BOOL</p></td>
+<td><p>Service button pressed/not pressed</p></td>
+</tr>
+<tr class="row-odd"><td><p>xGreenLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green LED is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xYellowLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Yellow LED is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xRedLED</p></td>
+<td><p>BOOL</p></td>
+<td><p>Red LED is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphRed</p></td>
+<td><p>BOOL</p></td>
+<td><p>Red bargraph LED is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphGreen1</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 1 is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphGreen2</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 2 is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphGreen3</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 3 is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xBargraphGreen4</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 4 is on/off</p></td>
+</tr>
+<tr class="row-odd"><td><p>xBargraphGreen5</p></td>
+<td><p>BOOL</p></td>
+<td><p>Green bargraph LED 5 is on/off</p></td>
+</tr>
+<tr class="row-even"><td><p>xSFB_Input</p></td>
+<td><p>BOOL</p></td>
+<td><p>SFB input is active/inactive</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtDataStruct</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 25%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>srSTATUS_FUNCTIONS</p></td>
+<td><p>PS_srSTATUS_FUNCTIONS</p></td>
+<td><p>Collection of status signals</p></td>
+</tr>
+<tr class="row-odd"><td><p>srSTATUS_INTERFACE</p></td>
+<td><p>PS_srSTATUS_INTERFACE</p></td>
+<td><p>Collection of interface signals</p></td>
+</tr>
+<tr class="row-even"><td><p>InputVoltage</p></td>
+<td><p>INT</p></td>
+<td><p>UPS input voltage in mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>InputCurrent</p></td>
+<td><p>INT</p></td>
+<td><p>UPS input current in mA</p></td>
+</tr>
+<tr class="row-even"><td><p>OutputVoltage</p></td>
+<td><p>INT</p></td>
+<td><p>UPS output voltage in mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>OutputCurrent</p></td>
+<td><p>INT</p></td>
+<td><p>UPS output current in mA</p></td>
+</tr>
+<tr class="row-even"><td><p>BatteryVoltage</p></td>
+<td><p>INT</p></td>
+<td><p>Battery voltage in mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>BatteryChargeCurrent</p></td>
+<td><p>INT</p></td>
+<td><p>Battery charge current in mA</p></td>
+</tr>
+<tr class="row-even"><td><p>BatteryTemperature</p></td>
+<td><p>INT</p></td>
+<td><p>Battery temperature in K</p></td>
+</tr>
+<tr class="row-odd"><td><p>DeviceTemperature</p></td>
+<td><p>INT</p></td>
+<td><p>Device temperature in K</p></td>
+</tr>
+<tr class="row-even"><td><p>SocRemainingTime</p></td>
+<td><p>DINT</p></td>
+<td><p>Remaining time in seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>SocRemainingTimePC_Shutdown</p></td>
+<td><p>DINT</p></td>
+<td><p>Remaining time until PC shutdown [s]</p></td>
+</tr>
+<tr class="row-even"><td><p>BatRemainingLifetime</p></td>
+<td><p>DINT</p></td>
+<td><p>Remaining lifetime in days</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtMsgCtrl</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 25%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CIPInfo</p></td>
+<td><p>PS_udtCIPInfo[30]</p></td>
+<td><p>Array of CIP object information</p></td>
+</tr>
+<tr class="row-odd"><td><p>CIPInfoSize</p></td>
+<td><p>DINT</p></td>
+<td><p>Size of CIP Information array</p></td>
+</tr>
+<tr class="row-even"><td><p>CIPInfoCount</p></td>
+<td><p>DINT</p></td>
+<td><p>count of actual CIP object information units</p></td>
+</tr>
+<tr class="row-odd"><td><p>readBuffer</p></td>
+<td><p>SINT[50]</p></td>
+<td><p>Read MSG data buffer</p></td>
+</tr>
+<tr class="row-even"><td><p>readFlag</p></td>
+<td><p>BOOL</p></td>
+<td><p>Read MSG active flag</p></td>
+</tr>
+<tr class="row-odd"><td><p>readIdx</p></td>
+<td><p>DINT</p></td>
+<td><p>Read index for cip object iteration</p></td>
+</tr>
+<tr class="row-even"><td><p>writeBuffer</p></td>
+<td><p>SINT[50]</p></td>
+<td><p>Write MSG data buffer</p></td>
+</tr>
+<tr class="row-odd"><td><p>writeFlag</p></td>
+<td><p>BOOL</p></td>
+<td><p>Write MSG active flag</p></td>
+</tr>
+<tr class="row-even"><td><p>writeTrigger</p></td>
+<td><p>BOOL</p></td>
+<td><p>Write MSG trigger</p></td>
+</tr>
+<tr class="row-odd"><td><p>writeIdx</p></td>
+<td><p>DINT</p></td>
+<td><p>write index for cip object iteration</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtMacConversion</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 25%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>idx</p></td>
+<td><p>DINT</p></td>
+<td><p>MAC address conversion index</p></td>
+</tr>
+<tr class="row-odd"><td><p>tmpSINT</p></td>
+<td><p>SINT</p></td>
+<td><p>Temporary working tag (full nibble)</p></td>
+</tr>
+<tr class="row-even"><td><p>tmp</p></td>
+<td><p>SINT</p></td>
+<td><p>temporary working tag (half nibble)</p></td>
+</tr>
+<tr class="row-odd"><td><p>nibbleSINT</p></td>
+<td><p>SINT[2]</p></td>
+<td><p>Nibble decimal array</p></td>
+</tr>
+<tr class="row-even"><td><p>nibbleIdx</p></td>
+<td><p>DINT</p></td>
+<td><p>MAC address nibble index</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtCIPInfo</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 25%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Class</p></td>
+<td><p>DINT</p></td>
+<td><p>CIP object class</p></td>
+</tr>
+<tr class="row-odd"><td><p>Instance</p></td>
+<td><p>DINT</p></td>
+<td><p>CIP object instance</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute</p></td>
+<td><p>DINT</p></td>
+<td><p>CIP object attribute</p></td>
+</tr>
+<tr class="row-odd"><td><p>Length</p></td>
+<td><p>DINT</p></td>
+<td><p>CIP object source length</p></td>
+</tr>
+<tr class="row-even"><td><p>ReadWrite</p></td>
+<td><p>DINT</p></td>
+<td><p>1=Read, 2=Write, 3=ReadWrite</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS_udtHMIInterface</strong> <br/></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 23%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MainMenu</p></td>
+<td><p>SINT</p></td>
+<td><p>Main menu index</p></td>
+</tr>
+<tr class="row-odd"><td><p>Submenu_Bat</p></td>
+<td><p>SINT</p></td>
+<td><p>Battery submenu index (not used)</p></td>
+</tr>
+<tr class="row-even"><td><p>SubMenu_Diag</p></td>
+<td><p>SINT</p></td>
+<td><p>Diagnosis submenu index</p></td>
+</tr>
+<tr class="row-odd"><td><p>SubMenu_Mon</p></td>
+<td><p>SINT</p></td>
+<td><p>Monitoring submenu index</p></td>
+</tr>
+<tr class="row-even"><td><p>Btn_BatCharge</p></td>
+<td><p>BOOL</p></td>
+<td><p>Button - toggle battery charge function</p></td>
+</tr>
+<tr class="row-odd"><td><p>Btn_ModSelSwitch</p></td>
+<td><p>BOOL</p></td>
+<td><p>Button - toggle mode selector switch function</p></td>
+</tr>
+<tr class="row-even"><td><p>Btn_UseChargeCurrent</p></td>
+<td><p>BOOL</p></td>
+<td><p>Button - charge current from Bat Com or User</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inp_ChargeCurr</p></td>
+<td><p>REAL</p></td>
+<td><p>Input - charge current[A]</p></td>
+</tr>
+<tr class="row-even"><td><p>Wrk_ChargeCurOld</p></td>
+<td><p>REAL</p></td>
+<td><p>Working - last set charge current [A]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wrk_ChargeCur_mA</p></td>
+<td><p>DINT</p></td>
+<td><p>Working - charge current [mA]</p></td>
+</tr>
+<tr class="row-even"><td><p>Lim_ChargeCurMin</p></td>
+<td><p>REAL</p></td>
+<td><p>Limit - charge current input min [A]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lim_ChargeCurMax</p></td>
+<td><p>REAL</p></td>
+<td><p>Limit - charge current input max [A]</p></td>
+</tr>
+<tr class="row-even"><td><p>Inp_UsrSysName</p></td>
+<td><p>STRING32</p></td>
+<td><p>Input - user system name</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wrk_UsrSysNameOld</p></td>
+<td><p>STRING32</p></td>
+<td><p>Working - last set user system name</p></td>
+</tr>
+<tr class="row-even"><td><p>Inp_UsrDevName</p></td>
+<td><p>STRING32</p></td>
+<td><p>Input - user device name</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wrk_UsrDevNameOld</p></td>
+<td><p>STRING32</p></td>
+<td><p>Working - last set user device name</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="#top">back to top</a></p>
+<img alt="../../_images/signal_chain.png" class="no-scaled-link" src="../../_images/signal_chain.png" style="width: 794.0px; height: 45.0px;" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../Automation%20Solutions%20Manual.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_PROFINET/PROFINET.html">PROFINET</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../EthernetIP.html">Ethernet/IP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_EIP_Set_IP_Address.html">Set an IP address</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="_EIP_Q4_DC_UPS.html">QUINT4 DC UPS 24DC/24DC/..A/EIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_EIP_Q4_DC_CAP/_EIP_Q4_DC_CAP.html">QUINT4 CAP/24DC/20/16KJ/EIP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_EtherCat/EtherCAT.html">EtherCAT</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../_EIP_Q4_DC_CAP/_EIP_Q4_DC_CAP.html" title="QUINT4 CAP/24DC/20/16KJ/EIP"
+             >next</a></li>
+        <li class="right" >
+          <a href="_EIP_Q4_DC_UPS_ProcessData.html" title="Process Data Description"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../EthernetIP.html" >Ethernet/IP</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_EIP_Q4_DC_UPS.html" >QUINT4 DC UPS 24DC/24DC/..A/EIP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Rockwell Automation Studio 5000</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Phoenix Contact Power Supplies GmbH.
+    </div>
+  </body>
+</html>

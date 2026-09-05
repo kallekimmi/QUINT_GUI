@@ -1,0 +1,228 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Process Data Description &#8212; Automation Solutions for Uninterupptible Power Supplies 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Rockwell Automation Studio 5000" href="_EIP_Q4_DC_CAP_Rockwell.html" />
+    <link rel="prev" title="Version History" href="_EIP_Q4_DC_CAP_VersionHistory.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="_EIP_Q4_DC_CAP_Rockwell.html" title="Rockwell Automation Studio 5000"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="_EIP_Q4_DC_CAP_VersionHistory.html" title="Version History"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../EthernetIP.html" >Ethernet/IP</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_EIP_Q4_DC_CAP.html" accesskey="U">QUINT4 CAP/24DC/20/16KJ/EIP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Process Data Description</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="top"></span><section id="process-data-description">
+<h1>Process Data Description</h1>
+<section id="validity">
+<h2>Validity</h2>
+<p>This document describes the process data for the following devices:</p>
+<table class="colwidths-given docutils align-default" id="tab-validity">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Device</p></th>
+<th class="head"><p>Ordernumber</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QUINT4-CAP/24DC/20/16KJ/EIP</p></td>
+<td><p>1076861</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="explicit-data-access">
+<h2>Explicit Data Access</h2>
+<p>For reading parameters from the UPS / Batteries use following settings:</p>
+<table class="colwidths-given docutils align-default" id="tab-reading">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 12%" />
+<col style="width: 41%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Class</p></th>
+<th class="head"><p>Instance</p></th>
+<th class="head"><p>Attribute</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0E ( Get_Attribute_Single)</p></td>
+<td><p>0x0F</p></td>
+<td><p>see Parameter list in device data sheet</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>For writing parameters to the UPS / Batteries use following settings:</p>
+<table class="colwidths-given docutils align-default" id="tab-writing">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 12%" />
+<col style="width: 41%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Class</p></th>
+<th class="head"><p>Instance</p></th>
+<th class="head"><p>Attribute</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x10 ( Set_Attribute_Single)</p></td>
+<td><p>0x0F</p></td>
+<td><p>see Parameter list in device data sheet</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="process-data">
+<h2>Process Data</h2>
+<p><strong>Device V/C 00</strong></p>
+<table class="colwidths-given docutils align-default" id="tab-processdata1">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Process Data</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Modbus Address</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SINT 0 - 3</p></td>
+<td><p>STATUS_FUNCTIONS</p></td>
+<td><p>CODE *</p></td>
+<td><p>0x2000</p></td>
+</tr>
+<tr class="row-odd"><td><p>SINT 4 - 7</p></td>
+<td><p>STATUS_INTERFACE</p></td>
+<td><p>CODE *</p></td>
+<td><p>0x2002</p></td>
+</tr>
+<tr class="row-even"><td><p>SINT 8 - 9</p></td>
+<td><p>Input Voltage</p></td>
+<td><p>mV</p></td>
+<td><p>0x2004</p></td>
+</tr>
+<tr class="row-odd"><td><p>SINT 10 - 11</p></td>
+<td><p>Output Voltage</p></td>
+<td><p>mV</p></td>
+<td><p>0x2006</p></td>
+</tr>
+<tr class="row-even"><td><p>SINT 12 - 13</p></td>
+<td><p>Discharge current</p></td>
+<td><p>mA</p></td>
+<td><p>0x200C</p></td>
+</tr>
+<tr class="row-odd"><td><p>SINT 14 - 15</p></td>
+<td><p>State of charge</p></td>
+<td><p>%</p></td>
+<td><p>0x200F</p></td>
+</tr>
+</tbody>
+</table>
+<p>* bit-coded variable, details can be taken from the device data sheet</p>
+<p><a class="reference internal" href="#top">Top</a></p>
+<img alt="../../_images/signal_chain.png" class="no-scaled-link" src="../../_images/signal_chain.png" style="width: 794.0px; height: 45.0px;" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../Automation%20Solutions%20Manual.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_PROFINET/PROFINET.html">PROFINET</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../EthernetIP.html">Ethernet/IP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../_EIP_Set_IP_Address.html">Set an IP address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_EIP_Q4_DC_UPS/_EIP_Q4_DC_UPS.html">QUINT4 DC UPS 24DC/24DC/..A/EIP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="_EIP_Q4_DC_CAP.html">QUINT4 CAP/24DC/20/16KJ/EIP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_EtherCat/EtherCAT.html">EtherCAT</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="_EIP_Q4_DC_CAP_Rockwell.html" title="Rockwell Automation Studio 5000"
+             >next</a></li>
+        <li class="right" >
+          <a href="_EIP_Q4_DC_CAP_VersionHistory.html" title="Version History"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../Automation%20Solutions%20Manual.html">Automation Solutions for Uninterupptible Power Supplies</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../EthernetIP.html" >Ethernet/IP</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="_EIP_Q4_DC_CAP.html" >QUINT4 CAP/24DC/20/16KJ/EIP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Process Data Description</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Phoenix Contact Power Supplies GmbH.
+    </div>
+  </body>
+</html>

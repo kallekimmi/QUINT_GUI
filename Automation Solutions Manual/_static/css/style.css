@@ -1,0 +1,353 @@
+/*
+ * style._static.css
+ *
+ *   Default style sheet used for Niagara documentation.
+ *
+ * @author    Brian Frank
+ * @since  2 Oct 01
+ * @version   $Revision$ $Date$
+ * @since     Niagara 3.0
+ */
+
+html * {
+  font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+
+code * {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+/***************************************************************
+* Caption (img/table...)
+***************************************************************/
+
+caption {
+  text-align: left;
+}
+
+.caption-number {
+  font-style: normal !important;
+  font-weight: bold;
+}
+
+.figure {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.figure>img {
+  order: 2;
+  width: fit-content;
+  align-self: center;
+}
+
+.figure>p.caption {
+  order: 1;
+  text-align: left !important;
+}
+
+/***************************************************************
+* Body
+***************************************************************/
+
+body {
+  font-size: 80%;
+  font-variant: normal;
+  background: #ffffff;
+  text-align: left;
+  border: unset !important;
+  color: black;
+}
+
+div.document {
+  -webkit-box-shadow: unset;
+  -moz-box-shadow: unset;
+}
+
+/************************
+ * Language selection,
+ * index page
+ ***********************/
+section.index {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+section.index h1 {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+}
+
+section.index div.content ul {
+  font-size: 1.2em;
+  padding: 3px;
+}
+
+section.index div.logo {
+  margin: 5vh 0 5vh 0;
+}
+
+.related.empty {
+  min-height: 1.5em;
+  font-size: .7em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/***************************************************************
+* Headers
+***************************************************************/
+h3 {
+  font-size: 1.0em;
+}
+
+/***************************************************************
+* Footer
+***************************************************************/
+div.footer {
+  text-align: center;
+  color: black;
+  border-bottom: unset;
+  -webkit-box-shadow: unset;
+  -moz-box-shadow: unset;
+}
+
+/***************************************************************
+* Paragraphs
+***************************************************************/
+
+p {
+  line-height: 1.6em;
+  text-align: justify;
+  padding: 0 8px 0 0;
+  font-style: normal;
+  font-size: 1.1em;
+}
+
+/*div*/
+/*{*/
+/*  margin-left: 1%;*/
+/*}*/
+
+div.note,
+p.note,
+p.tip,
+p.warning,
+p.important,
+p.caution,
+p.weblink {
+  margin: 15px 15px 15px 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-radius: 0;
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  color: #000000;
+  text-align: left;
+}
+
+/*p.important*/
+/*{*/
+/*  border-left: 4px solid #ed8b00;*/
+/*}*/
+
+div.note p.admonition-title,
+div.important p.admonition-title {
+  background-color: #87BA42;
+  border-bottom: 3px solid #24959E;
+}
+
+p.admonition-title {
+  border-bottom: unset;
+  background-color: unset;
+  padding: unset;
+  color: #24959E;
+}
+
+h3.weblink {
+  font-weight: bold;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+p.weblink {
+  font-size: 1em;
+  border-left: 4px solid #0098a1;
+}
+
+div.note,
+p.note {
+  border-left: 4px solid #87BA42;
+}
+
+div.tip,
+p.tip {
+  border-left: 4px solid #007982;
+}
+
+div.warning,
+p.warning,
+p.caution {
+  border-left: 4px solid #ffff00;
+  border-left: 4px solid red;
+}
+
+div.related {
+  background: #007982;
+  color: #ffffff;
+  box-shadow: unset;
+  -webkit-box-shadow: unset;
+  -moz-box-shadow: unset;
+}
+
+div.related ul {
+  background-color: #007982;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+/***************************************************************
+* Pre
+***************************************************************/
+
+pre {
+  font-family: 'Courier New', Courier, monospace !important;
+  /* reduced so that `.. code-block::` doesn't look ugly */
+  padding: 1em;
+  color: #008000;
+}
+
+.code>.highlight pre {
+  padding: 0 .2em 0 .2em !important;
+}
+
+table.highlighttable td.linenos {
+  padding-right: 0.2em;
+  font-size: 0.95em;
+}
+
+td.linenos pre {
+  padding: 0.4em 0;
+}
+
+.code div.highlight {
+  padding: 0.4em 0;
+  margin: 0;
+}
+
+pre.doc-code-example {
+  background: #fafafa;
+  margin: 10px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #969696;
+}
+
+/***************************************************************
+* Lists
+***************************************************************/
+
+ul {
+  padding-left: 2em;
+}
+
+ol {
+  padding-left: 2em;
+}
+
+li {
+  line-height: 1.6em;
+  margin: 0.6em;
+}
+
+/***************************************************************
+* Tables
+***************************************************************/
+
+table {
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+table td ul {
+  list-style-type: square;
+}
+
+th {
+  text-align: left;
+  border: 0 solid #d6d6d6;
+  border-top-width: 1px;
+  padding: 5px 0 5px 0;
+  background-color: #ebebeb;
+  color: #3c3c3c;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+table.pxc-tbl-param th {
+  background-color: #edf0f3;
+}
+
+th:first-of-type,
+td:first-of-type {
+  padding-left: 25px;
+}
+
+td {
+  border: 0 solid #ebebeb;
+  border-bottom-width: 1px;
+  padding: 5px 0 5px 0;
+  line-height: 1.6em;
+  font-weight: normal;
+  font-size: .9em;
+}
+
+.pxc-tbl-actionprops tr.even td,
+.pxc-cnt .pxc-tbl-zebra tr.even td {
+  background-color: #f2f4f6;
+}
+
+td.bold {
+  font-weight: bold;
+  font-size: .8em;
+}
+
+div.bold {
+  font-weight: bold;
+}
+
+/***************************************************************
+* Font Styles
+***************************************************************/
+
+font.index {
+  font-weight: bold;
+}
+
+span.underline {
+  text-decoration: underline;
+}
+
+span.smallcaps {
+  font: normal 1.1em "Courier New", Courier, monospace;
+  font-weight: inherit;
+}
+
+@media print {
+  h5 {
+    page-break-before: always;
+  }
+
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+}

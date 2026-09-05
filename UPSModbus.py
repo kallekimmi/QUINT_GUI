@@ -3,16 +3,20 @@ import dearpygui.dearpygui as dpg
 import threading
 import queue
 import time
+import os
+import sys
 from pymodbus.client import ModbusTcpClient
 
 # -- COMMAND LINE ARGUMENTS --
 parser = argparse.ArgumentParser(description="QUINT4 UPS Monitor")
-parser.add_argument("--ip", type=str, default="127.0.0.1", help="Target UPS IP Address")
+parser.add_argument("--ip", type=str, default=None, help="Target UPS IP Address (Triggers auto-connect)")
 parser.add_argument("--port", type=int, default=5020, help="Target Modbus Port")
 parser.add_argument("--interval", type=float, default=2.0, help="Update interval in seconds")
 parser.add_argument("--points", type=int, default=3600, help="Max plot points to keep")
-parser.add_argument("--auto", action="store_true", help="Auto-connect on launch")
 args = parser.parse_args()
+
+auto_connect = args.ip is not None
+ip_address = args.ip if args.ip is not None else "127.0.0.1"
 
 # -- STATIC ALARM BIT MAPS --
 UPS_WARNINGS = {
@@ -30,6 +34,14 @@ UPS_ALARMS = {
     13: "Bat end of life reached", 14: "No battery detected", 16: "Replace battery"
 }
 
+def resource_path(relative_path):
+    """Skapar en absolut sökväg till resursen (fungerar även för PyInstaller .exe)"""
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 def decode_hopping_alarm(hopping_val):
     if not ((hopping_val >> 31) & 0x01): return "No Device Alarms"
     dev = (hopping_val >> 15) & 0xFFFF
@@ -43,7 +55,7 @@ def decode_hopping_alarm(hopping_val):
 # Global State Variables
 data_queue = queue.Queue()
 plot_history = {} 
-plot_titles = {} # Stores the formatted titles with units for the plots
+global_units = {} 
 param_state = {} 
 is_connected = False
 running = True
@@ -71,12 +83,11 @@ def poll_ups_data():
                         "Charging Current": regs[0x0B] / 1000.0,
                         "Temperature": (regs[0x0D] - 273.15 if regs[0x0D] > 0 else 0),
                         "Remaining Time": (regs[0x11] << 16) + regs[0x10],
+                        "Warnings": w_reg,
+                        "Alarms": a_reg,
+                        "Hopping": hop_reg,
                         "Hopping Alarms": decode_hopping_alarm(hop_reg),
-                        
-                        "Operating Mode (Plot)": 1.0 if is_battery_mode else 0.0,
-                        "Raw Warnings (Plot)": w_reg,
-                        "Raw Alarms (Plot)": a_reg,
-                        "Raw Hopping (Plot)": hop_reg
+                        "Operating Mode (Plot)": 1.0 if is_battery_mode else 0.0
                     }
                     
                     alarms = {f"W_{b}": bool(w_reg & (1 << b)) for b in UPS_WARNINGS}
@@ -89,7 +100,9 @@ def poll_ups_data():
         except Exception as e:
             data_queue.put({"status": "error", "msg": str(e)}) 
         
+        # Nu använder vi sekunder direkt från inmatningsfältet
         time.sleep(dpg.get_value("ui_interval"))
+        
     client.close()
 
 def toggle_connection():
@@ -109,34 +122,30 @@ def toggle_connection():
 # --- Dear PyGui UI Setup ---
 dpg.create_context() 
 
-# ---------------------------------------------------------------------
-# PLOT PADDING THEME IMPORT
-# Creates a 5% margin on X-axis and 10% on Y-axis for all plots[cite: 3]
-# ---------------------------------------------------------------------
 with dpg.theme(tag="padding_theme"):
     with dpg.theme_component(dpg.mvPlot):
-        dpg.add_theme_style(dpg.mvPlotStyleVar_FitPadding, 0.05, 0.1, category=dpg.mvThemeCat_Plots) #[cite: 3]
+        dpg.add_theme_style(dpg.mvPlotStyleVar_FitPadding, 0.05, 0.1, category=dpg.mvThemeCat_Plots) 
 
 with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
     with dpg.group(horizontal=True):
         
-        # Left Side: Settings & Data Table
-        with dpg.child_window(width=500):
+        with dpg.child_window(width=380):
             dpg.add_text("CONNECTION SETTINGS")
             dpg.add_separator()
             
             with dpg.group(horizontal=True):
                 dpg.add_text("IP:")
-                dpg.add_input_text(default_value=args.ip, tag="ui_ip", width=120)
+                dpg.add_input_text(default_value=ip_address, tag="ui_ip", width=105)
                 dpg.add_text("Port:")
-                dpg.add_input_int(default_value=args.port, tag="ui_port", width=60, step=0)
+                dpg.add_input_int(default_value=args.port, tag="ui_port", width=50, step=0)
+                dpg.add_button(label="Connect", tag="btn_connect", width=-1, callback=toggle_connection)
                 
             with dpg.group(horizontal=True):
-                dpg.add_text("Rate(s):")
-                dpg.add_input_float(default_value=args.interval, tag="ui_interval", width=55, step=0)
-                dpg.add_text("Pts:")
-                dpg.add_input_int(default_value=args.points, tag="ui_points", width=65, step=0)
-                dpg.add_button(label="Connect", tag="btn_connect", width=-1, callback=toggle_connection)
+                dpg.add_text("Poll interval(s):")
+                dpg.add_input_float(default_value=args.interval, tag="ui_interval", width=45, step=0)
+                dpg.add_spacer(width=2)
+                dpg.add_text("Sample Pts:")
+                dpg.add_input_int(default_value=args.points, tag="ui_points", width=55, step=0)
                 
             dpg.add_spacer(height=10)
             dpg.add_text("QUINT4 UPS Data")
@@ -145,8 +154,7 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
             with dpg.table(header_row=True, borders_innerH=True, borders_innerV=True, resizable=False, policy=dpg.mvTable_SizingStretchProp):
                 dpg.add_table_column(label="Address", init_width_or_weight=0.15)
                 dpg.add_table_column(label="Variable", init_width_or_weight=0.45)
-                dpg.add_table_column(label="Value", init_width_or_weight=0.25) 
-                dpg.add_table_column(label="Unit", init_width_or_weight=0.15)
+                dpg.add_table_column(label="Value", init_width_or_weight=0.40) 
                 
                 process_keys = [
                     ("0x2000", "Operating Status", "Str", ""),
@@ -157,18 +165,18 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
                     ("0x200A", "Battery Voltage", "Num", "V"),
                     ("0x200B", "Charging Current", "Num", "A"),
                     ("0x200D", "Temperature", "Num", "°C"),
-                    ("0x2010", "Remaining Time", "Num", "s"),
+                    ("0x2010", "Remaining Time", "Num", ""),
+                    ("0x2015", "Warnings", "Num", ""),
+                    ("0x2016", "Alarms", "Num", ""),
+                    ("0x2018", "Hopping", "Num", ""),
                     ("0x2018", "Hopping Alarms", "Str", "")
                 ]
                 
-                hidden_plots = {
-                    "Operating Mode (Plot)": "Operating Mode (0 = Mains Operation, 1 = Battery Operation)",
-                    "Raw Warnings (Plot)": "Raw Warnings [Mask]", 
-                    "Raw Alarms (Plot)": "Raw Alarms [Mask]", 
-                    "Raw Hopping (Plot)": "Raw Hopping [Mask]"
-                }
+                hidden_plots = ["Operating Mode (Plot)"]
                 
                 for addr, name, dtype, unit in process_keys:
+                    global_units[name] = unit
+                    
                     with dpg.table_row():
                         dpg.add_text(addr)
                         dpg.add_input_text(default_value=name, readonly=True, width=-1)
@@ -180,15 +188,13 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
                                 
                         dpg.add_input_text(default_value="-", tag=f"val_{name}", readonly=True, width=-1)
                         dpg.bind_item_theme(f"val_{name}", f"theme_{name}")
-                        dpg.add_text(unit)
                         
                         if dtype == "Num":
                             plot_history[name] = [[], []] 
-                            plot_titles[name] = f"{name} [{unit}]" # Append unit to title
                 
-                for hp_key, hp_title in hidden_plots.items():
-                    plot_history[hp_key] = [[], []]
-                    plot_titles[hp_key] = hp_title
+                for hp in hidden_plots:
+                    plot_history[hp] = [[], []]
+                    global_units[hp] = ""
 
             dpg.add_spacer(height=10)
             dpg.add_text("Active Alarms (Bit Breakdowns)")
@@ -196,8 +202,8 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
             
             with dpg.table(header_row=False, borders_innerH=True, resizable=False, policy=dpg.mvTable_SizingStretchProp):
                 dpg.add_table_column(init_width_or_weight=0.15)
-                dpg.add_table_column(init_width_or_weight=0.65)
-                dpg.add_table_column(init_width_or_weight=0.20)
+                dpg.add_table_column(init_width_or_weight=0.60)
+                dpg.add_table_column(init_width_or_weight=0.25)
                 
                 for bit, desc in list(UPS_WARNINGS.items()) + list(UPS_ALARMS.items()):
                     is_warning = desc in UPS_WARNINGS.values()
@@ -216,7 +222,6 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
                         dpg.add_input_text(default_value="Inactive", tag=f"val_{tag}", readonly=True, width=-1)
                         dpg.bind_item_theme(f"val_{tag}", f"theme_{tag}")
 
-        # Right Side: Dynamic Plots
         with dpg.child_window(width=-1):
             dpg.add_text("Telemetry Plots")
             dpg.add_separator()
@@ -236,9 +241,7 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
                                         with dpg.theme_component(dpg.mvText):
                                             dpg.add_theme_color(dpg.mvThemeCol_Text, [255, 255, 255, 255], tag=f"color_header_{key}")
                                     
-                                    # Fetch the formatted title containing units or custom text
-                                    display_title = plot_titles.get(key, key)
-                                    dpg.add_text(display_title, tag=f"header_{key}")
+                                    dpg.add_text(key, tag=f"header_{key}")
                                     dpg.bind_item_theme(f"header_{key}", f"theme_header_{key}")
                                     
                                     with dpg.plot(height=125, width=-1, tag=f"plot_{key}"):
@@ -246,18 +249,24 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
                                         dpg.add_plot_axis(dpg.mvYAxis, tag=f"y_{key}") 
                                         dpg.add_line_series([], [], tag=f"series_{key}", parent=f"y_{key}") 
 
-dpg.create_viewport(title='Phoenix QUINT4 UPS Viewer', width=1200, height=800) 
+dpg.create_viewport(title='Phoenix QUINT4 UPS Viewer', width=1300, height=1015) 
+
+# Ladda in favicon.ico om den existerar
+favicon_path = resource_path("favicon.ico")
+if os.path.exists(favicon_path):
+    try:
+        dpg.set_viewport_small_icon(favicon_path)
+        dpg.set_viewport_large_icon(favicon_path)
+    except Exception as e:
+        print(f"Kunde inte ladda ikonen: {e}")
+
 dpg.setup_dearpygui() 
 dpg.show_viewport() 
 
-# ---------------------------------------------------------------------
-# BIND THE PADDING THEME
-# Assigning it to the main window propagates it to all child plots[cite: 3]
-# ---------------------------------------------------------------------
 dpg.set_primary_window("main_window", True) 
-dpg.bind_item_theme("main_window", "padding_theme") #[cite: 3]
+dpg.bind_item_theme("main_window", "padding_theme") 
 
-if args.auto:
+if auto_connect:
     toggle_connection()
 
 start_time = time.time()
@@ -275,10 +284,43 @@ while dpg.is_dearpygui_running():
                 all_updates[k] = "ACTIVE" if v else "Inactive"
             
             for key, val in all_updates.items():
-                if dpg.does_item_exist(f"val_{key}"):
-                    display_val = f"{val:.2f}" if isinstance(val, float) else str(val)
-                    dpg.set_value(f"val_{key}", display_val)
                 
+                # --- FORMATERING ---
+                unit_str = global_units.get(key, "")
+                u_str = f" {unit_str}" if unit_str else ""
+                
+                if key in ["Warnings", "Alarms"]:
+                    raw_str = f"0x{int(val):04X}"
+                    table_display_val = raw_str
+                    plot_display_val = raw_str
+                elif key == "Hopping":
+                    raw_str = f"0x{int(val):08X}"
+                    table_display_val = raw_str
+                    plot_display_val = raw_str
+                elif key == "Remaining Time":
+                    m, s = divmod(int(val), 60)
+                    h, m = divmod(m, 60)
+                    table_display_val = f"{h}h {m}m {s}s"
+                    plot_display_val = f"{int(val)} s"
+                else:
+                    raw_str = f"{val:.2f}" if isinstance(val, float) else str(val)
+                    table_display_val = f"{raw_str}{u_str}"
+                    plot_display_val = f"{raw_str}{u_str}"
+
+                # 1. Uppdatera Huvudtabellen
+                if dpg.does_item_exist(f"val_{key}"):
+                    dpg.set_value(f"val_{key}", table_display_val)
+                    
+                # 2. Uppdatera dynamiska rubriker över graferna
+                if dpg.does_item_exist(f"header_{key}"):
+                    if key == "Operating Mode (Plot)":
+                        header_text = f"Operating Mode (0=Mains, 1=Bat) = {int(val)}"
+                    else:
+                        header_text = f"{key} = {plot_display_val}"
+                        
+                    dpg.set_value(f"header_{key}", header_text)
+                
+                # Registrera tidpunkt för color fading animation
                 if key not in param_state or param_state[key]["val"] != val:
                     if key.startswith("W_") or key.startswith("A_"):
                         t_type = "to_active" if "ACTIVE" in str(val) else "to_inactive"
@@ -287,6 +329,7 @@ while dpg.is_dearpygui_running():
                         
                     param_state[key] = {"val": val, "time": time.time(), "type": t_type} 
                     
+                # 3. Uppdatera graferna 
                 if key in plot_history:
                     plot_history[key][0].append(uptime) 
                     plot_history[key][1].append(float(val)) 
@@ -298,11 +341,11 @@ while dpg.is_dearpygui_running():
                     if dpg.does_item_exist(f"series_{key}"):
                         dpg.set_value(f"series_{key}", [plot_history[key][0], plot_history[key][1]]) 
                         
-                        # Stop auto-scaling if the user actively hovers over the plot with the mouse[cite: 3]
                         if not dpg.is_item_hovered(f"plot_{key}"):
                             dpg.fit_axis_data(f"x_{key}") 
                             dpg.fit_axis_data(f"y_{key}") 
 
+    # Dynamic color calculations over 5 seconds
     current_time = time.time()
     for key, state in param_state.items():
         time_diff = current_time - state["time"]

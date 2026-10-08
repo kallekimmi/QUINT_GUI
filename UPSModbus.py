@@ -10,13 +10,13 @@ from pymodbus.client import ModbusTcpClient
 # -- COMMAND LINE ARGUMENTS --
 parser = argparse.ArgumentParser(description="QUINT4 UPS Monitor")
 parser.add_argument("--ip", type=str, default=None, help="Target UPS IP Address (Triggers auto-connect)")
-parser.add_argument("--port", type=int, default=5020, help="Target Modbus Port")
+parser.add_argument("--port", type=int, default=502, help="Target Modbus Port")
 parser.add_argument("--interval", type=float, default=2.0, help="Update interval in seconds")
 parser.add_argument("--points", type=int, default=3600, help="Max plot points to keep")
 args = parser.parse_args()
 
 auto_connect = args.ip is not None
-ip_address = args.ip if args.ip is not None else "127.0.0.1"
+ip_address = args.ip if args.ip is not None else "192.168.19.23"
 
 # -- STATIC ALARM BIT MAPS --
 UPS_WARNINGS = {
@@ -61,12 +61,26 @@ is_connected = False
 running = True
 
 def poll_ups_data():
-    client = ModbusTcpClient(dpg.get_value("ui_ip"), port=dpg.get_value("ui_port"))
+    # Fix 1: Ange explicit 'host=' eftersom senaste Pymodbus förbjuder host som positionsargument
+    client = ModbusTcpClient(host=dpg.get_value("ui_ip"), port=dpg.get_value("ui_port"))
+    
     while is_connected and running:
         try:
             if client.connect():
-                response = client.read_input_registers(address=0x2000, count=26, slave=1)
-                if not response.isError():
+                # Fix 2: Hantera Pymodbus 3.x (slave=1) och Pymodbus 4.x (device_id=1)
+                try:
+                    response = client.read_input_registers(address=0x2000, count=26, slave=1)
+                except TypeError:
+                    response = client.read_input_registers(address=0x2000, count=26, device_id=1)
+                
+                # Fix 3: Säkrare felkontroll utan att förlita sig enbart på .isError() som kan saknas på Exceptions
+                is_error = False
+                if isinstance(response, Exception):
+                    is_error = True
+                elif hasattr(response, "isError") and response.isError():
+                    is_error = True
+
+                if not is_error:
                     regs = response.registers
                     is_battery_mode = (regs[0x00] & (1 << 4)) != 0
                     w_reg = regs[0x15]
@@ -94,13 +108,12 @@ def poll_ups_data():
                     alarms.update({f"A_{b}": bool(a_reg & (1 << b)) for b in UPS_ALARMS})
                     data_queue.put({"status": "ok", "data": data, "alarms": alarms}) 
                 else:
-                    data_queue.put({"status": "error", "msg": "Read Error"}) 
+                    data_queue.put({"status": "error", "msg": f"Read Error: {str(response)}"}) 
             else:
                 data_queue.put({"status": "error", "msg": "Connection Failed"}) 
         except Exception as e:
             data_queue.put({"status": "error", "msg": str(e)}) 
         
-        # Nu använder vi sekunder direkt från inmatningsfältet
         time.sleep(dpg.get_value("ui_interval"))
         
     client.close()
@@ -251,7 +264,6 @@ with dpg.window(tag="main_window", label="QUINT4 UPS Monitor"):
 
 dpg.create_viewport(title='Phoenix QUINT4 UPS Viewer', width=1300, height=1015) 
 
-# Ladda in favicon.ico om den existerar
 favicon_path = resource_path("favicon.ico")
 if os.path.exists(favicon_path):
     try:
@@ -307,11 +319,9 @@ while dpg.is_dearpygui_running():
                     table_display_val = f"{raw_str}{u_str}"
                     plot_display_val = f"{raw_str}{u_str}"
 
-                # 1. Uppdatera Huvudtabellen
                 if dpg.does_item_exist(f"val_{key}"):
                     dpg.set_value(f"val_{key}", table_display_val)
                     
-                # 2. Uppdatera dynamiska rubriker över graferna
                 if dpg.does_item_exist(f"header_{key}"):
                     if key == "Operating Mode (Plot)":
                         header_text = f"Operating Mode (0=Mains, 1=Bat) = {int(val)}"
@@ -320,7 +330,6 @@ while dpg.is_dearpygui_running():
                         
                     dpg.set_value(f"header_{key}", header_text)
                 
-                # Registrera tidpunkt för color fading animation
                 if key not in param_state or param_state[key]["val"] != val:
                     if key.startswith("W_") or key.startswith("A_"):
                         t_type = "to_active" if "ACTIVE" in str(val) else "to_inactive"
@@ -329,7 +338,6 @@ while dpg.is_dearpygui_running():
                         
                     param_state[key] = {"val": val, "time": time.time(), "type": t_type} 
                     
-                # 3. Uppdatera graferna 
                 if key in plot_history:
                     plot_history[key][0].append(uptime) 
                     plot_history[key][1].append(float(val)) 
@@ -345,7 +353,6 @@ while dpg.is_dearpygui_running():
                             dpg.fit_axis_data(f"x_{key}") 
                             dpg.fit_axis_data(f"y_{key}") 
 
-    # Dynamic color calculations over 5 seconds
     current_time = time.time()
     for key, state in param_state.items():
         time_diff = current_time - state["time"]

@@ -2,7 +2,7 @@ QUINT4 UPS Modbus Monitor & Simulator
 An interactive suite built with Dear PyGui and PyModbus designed to monitor, visualize, and simulate telemetry from a Phoenix Contact QUINT4 UPS (or compatible device) over Modbus TCP.
 The repository includes two main applications:
 UPS Monitor (QUINT_GUI.py): A Modbus TCP client for monitoring live UPS data.
-UPS Simulator (SimulateUPS_2.py): A Modbus TCP server simulating a virtual UPS for development and testing.
+UPS Simulator (SimulateUPS.py): A Modbus TCP server simulating a virtual UPS for development and testing.
 System Requirements & Setup
 Target Environment
 Python: 3.14.7
@@ -24,7 +24,7 @@ Telemetry Plots: Graphically visualizes historical data trends over time.
 Status & Diagnostics: Decodes status registers, warning/alarm bitmasks (0x2015-0x2017), and hopping alarms (0x2018-0x2019).
 Visual Feedback: Color-coded GUI indicators for rapid identification of state changes and active alarms.
 CLI Configuration: Accepts command-line arguments (e.g., --ip, --port, --interval, --points).
-2. UPS Simulator (SimulateUPS_2.py)
+2. UPS Simulator (SimulateUPS.py)
 A standalone Modbus TCP server simulating a virtual QUINT4 UPS.
 Automated Simulation: Automatically cycles through realistic operating states with added measurement jitter:
 MAINS: Normal mains power operation.
@@ -68,7 +68,7 @@ Running the Applications
 Testing with the Simulator
 Launch the simulator in a terminal window:
 ```bash
-   python SimulateUPS_2.py
+   python SimulateUPS.py
    ```
 Launch the monitor in a second terminal window:
 ```bash
@@ -96,7 +96,7 @@ Project Structure
 ```text
 QUINT4-UPS/
 ├── QUINT_GUI.py       # Main Application (Monitor GUI)
-├── SimulateUPS_2.py   # UPS Simulator (Modbus Server GUI)
+├── SimulateUPS.py   # UPS Simulator (Modbus Server GUI)
 ├── favicon.ico        # Application Icon (Optional)
 ├── Build.bat          # PyInstaller Build Script (Optional)
 ├── README.md          # Project Documentation

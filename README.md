@@ -27,7 +27,7 @@ pyinstaller: Optional dependency used to package the monitor as a standalone Win
 Make sure that the Python interpreter used to run the applications is the same interpreter into which the dependencies were installed.
 
 Features & Included Tools
-1. UPS Monitor (UPSModbus.py)
+1. UPS Monitor (QUINT_GUI.py)
 
 A graphical Modbus TCP client that connects to a UPS or the simulator and reads telemetry from its Input Registers.
 
@@ -137,7 +137,7 @@ The simulator starts a Modbus TCP server on 127.0.0.1:502 and opens the graphica
 
 Start the monitor in a second terminal:
 
-python UPSModbus.py --ip 127.0.0.1 --port 502
+python QUINT_GUI.py --ip 127.0.0.1 --port 502
 
 
 The monitor should now read the simulated Input Registers.
@@ -148,7 +148,7 @@ Connecting to a Physical UPS
 
 Run the monitor with the IP address of the physical UPS:
 
-python UPSModbus.py --ip 192.168.19.23 --port 502
+python QUINT_GUI.py --ip 192.168.19.23 --port 502
 
 
 Replace 192.168.19.23 with the actual IP address of your device.
@@ -164,11 +164,11 @@ The example IP address is illustrative and must be replaced with the address of 
 
 Building a Standalone Windows Executable
 
-PyInstaller can package UPSModbus.py into a standalone Windows executable.
+PyInstaller can package QUINT_GUI.py into a standalone Windows executable.
 
 Ensure that favicon.ico is available in the project directory, then run:
 
-pyinstaller --onefile --noconsole --icon=favicon.ico --add-data "favicon.ico;." UPSModbus.py
+pyinstaller --onefile --noconsole --icon=favicon.ico --add-data "favicon.ico;." QUINT_GUI.py
 
 
 Alternatively, use Build.bat if it is configured for your project.
@@ -213,7 +213,7 @@ Project Structure
 A typical project directory may look like this:
 
 QUINT4-UPS/
-├── UPSModbus.py
+├── QUINT_GUI.py
 ├── SimulateUPS_2.py
 ├── favicon.ico
 ├── Build.bat
